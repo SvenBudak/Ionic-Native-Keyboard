@@ -1,0 +1,9 @@
+<div class="spacer" *ngIf="showSpacer()"></div>
+
+<media-picker
+  [@slide]="visible()"
+  (@slide.start)="onAnimationStart($event)"
+  (@slide.done)="onAnimationDone($event)"
+  [initialIndex]="activeTab() === MediaType.Emoji ? 0 : activeTab() === MediaType.Gif ? 1 : 2"
+  (select)="onSelect($event)"
+></media-picker>

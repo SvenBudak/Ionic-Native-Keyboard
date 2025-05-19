@@ -1,0 +1,27 @@
+<div style="padding: 8px;">
+  <ion-segment mode="ios">
+    <ion-segment-button value="emoji" content-id="emoji">
+      <ion-label>Emoji</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="sticker" content-id="sticker">
+      <ion-label>Sticker</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="gif" content-id="gif">
+      <ion-label>GIF</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<ion-segment-view>
+  <ion-segment-content id="emoji">
+    <media-picker-panel-emoji (selectEmoji)="onSelect($event)"></media-picker-panel-emoji>
+  </ion-segment-content>
+
+  <ion-segment-content id="sticker">
+    <media-picker-panel-sticker (selectSticker)="onSelect($event)"></media-picker-panel-sticker>
+  </ion-segment-content>
+
+  <ion-segment-content id="gif">
+    <media-picker-panel-gif (selectGif)="onSelect($event)"></media-picker-panel-gif>
+  </ion-segment-content>
+</ion-segment-view>
