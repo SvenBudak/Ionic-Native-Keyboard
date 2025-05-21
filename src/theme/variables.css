@@ -1,0 +1,27 @@
+/**
+ * Ionic Dark Theme
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+/* @import "@ionic/angular/css/palettes/dark.always.css"; */
+/* @import "@ionic/angular/css/palettes/dark.class.css"; */
+/* @import "@ionic/angular/css/palettes/dark.system.css"; */
+
+:root {
+    --ion-text-color: #F2D492;
+  
+    --ion-background-color: #202C39;
+  }
+  
+  
+  :root {
+    --ion-color-primary: #F2D492;
+    --ion-color-primary-rgb: 242,212,146;
+    --ion-color-primary-contrast: #202C39;
+    --ion-color-primary-contrast-rgb: 32, 44, 57;
+    --ion-color-primary-shade: #d5bb80;
+    --ion-color-primary-tint: #f3d89d;
+  }
+  
