@@ -1,28 +1,26 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  HostBinding,
   Input,
   ViewEncapsulation,
-} from '@angular/core';
+} from "@angular/core";
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   encapsulation: ViewEncapsulation.None,
-  selector: 'skeleton-image',
+  selector: "skeleton-image",
   standalone: true,
+  host: {
+    class: "skeleton-image w-full max-w-full block",
+    "[style.--skeleton-image-color-1]": "'#404040'",
+    "[style.--skeleton-image-color-2]": "'#212223'",
+    "[style.aspect-ratio]": "aspectRatio.replace(':', ' / ')",
+    "[style.animation]": "disableAnimation ? null : 'skeleton-image-loading 1s linear infinite alternate'",
+    "[style.backgroundColor]": "disableAnimation ? 'var(--skeleton-image-color-1)' : null",
+  },
+  template: ``,
   styles: [
     `
-      .skeleton-image {
-        --skeleton-image-color-1: #404040;
-        --skeleton-image-color-2: #212223;
-
-        width: 100%;
-        max-width: 100%;
-        display: block;
-        animation: skeleton-image-loading 1s linear infinite alternate;
-      }
-
       @keyframes skeleton-image-loading {
         0% {
           background-color: var(--skeleton-image-color-1);
@@ -33,35 +31,8 @@ import {
       }
     `,
   ],
-  template: ``,
 })
 export class SkeletonImageComponent {
-  @Input()
-  set aspectRatio(value: string) {
-    this._aspectRatio = this.convertAspectRatio(value);
-  }
-  get aspectRatio() {
-    return this._aspectRatio;
-  }
-  private _aspectRatio = '1 / 1';
-
-  @HostBinding('class')
-  get elementClasses() {
-    return {
-      'skeleton-image': true,
-    };
-  }
-
-  @HostBinding('style.aspectRatio')
-  get hostAspectRatio() {
-    return this.aspectRatio;
-  }
-
-  private convertAspectRatio(value: string): string {
-    if (value.includes(':')) {
-      return value.replace(':', ' / ');
-    } else {
-      return value;
-    }
-  }
+  @Input() aspectRatio = "1 / 1";
+  @Input() disableAnimation = false;
 }

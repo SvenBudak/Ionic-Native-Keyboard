@@ -9,11 +9,12 @@ import {
   IonToolbar,
   IonApp,
 } from "@ionic/angular/standalone";
-import { MediaPickerMobileWrapperComponent } from "./features/media-picker/mobile-wrapper/mobile-wrapper.component";
-import { MediaPickerToggleDirective } from "./features/media-picker/media-picker-toggle.directive";
-import { MediaPickerInputDirective } from "./features/media-picker/media-picker-input.directive";
+
 import { MediaPickerMediaType } from "./features/media-picker/media-picker.definitions";
 import { MessageListComponent } from "./components/message-list.component";
+import { MediaPickerMobileWrapperComponent } from "./features/media-picker/components/media-picker-mobile-wrapper.component";
+import { MediaPickerToggleDirective } from "./features/media-picker/directives/media-picker-toggle.directive";
+import { MediaPickerInputDirective } from "./features/media-picker/directives/media-picker-input.directive";
 
 @Component({
   selector: "app-root",
@@ -33,9 +34,9 @@ import { MessageListComponent } from "./components/message-list.component";
   ],
   template: `
     <ion-app>
-      <ion-header class="ion-no-border">
+      <ion-header>
         <ion-toolbar color="primary">
-          <ion-title> Ionic Native Keyboard Challenge </ion-title>
+          <ion-title class="px-5">Ionic Native Keyboard Challenge</ion-title>
         </ion-toolbar>
       </ion-header>
 
